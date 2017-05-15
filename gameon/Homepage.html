@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title> GAME ON! </title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <center>
+        <div class="container">
+            <section id="content">
+                <form action="">
+                    <h1>Login Form</h1>
+                    <div>
+                        <input type="text" placeholder="Username" required="" id="username" />
+                    </div>
+                    <div>
+                        <input type="password" placeholder="Password" required="" id="password" />
+                    </div>
+                    <div>
+                        <input type="submit" value="Log in" /> <br>
+                        <a href="#">Lost your password?</a> 
+                        <a href="#">Register</a>
+                    </div>
+                </form>
+                <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+                <div class="fullscreen-bg">
+                    <video loop muted autoplay poster="img/videoframe.jpg" class="fullscreen-bg__video">
+                        <!--                <source src="video/GOPR0827_1.mp4" type="video/mp4">-->
+                    </video>
+                </div>
+                <div class ="bodybackground">
+                
+                </div>
+                <script>
+                    window.fbAsyncInit = function() {
+                        FB.init({
+                            appId      : '1490199774375854',
+                            xfbml      : true,
+                            version    : 'v2.9'
+                        });
+                        FB.AppEvents.logPageView();
+                    };
+
+                    (function(d, s, id){
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) {return;}
+                        js = d.createElement(s); js.id = id;
+                        js.src = "//connect.facebook.net/en_US/sdk.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));
+
+                    FB.getLoginStatus(function(response) {
+                        statusChangeCallback(response);
+                    });
+                </script>
+                </body>
+            </html>
